@@ -371,6 +371,18 @@ a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1p
 }
 .hero-tag { border-top: 1px solid rgb(255 255 255 / 0.28); padding-top: 0.9rem; }
 
+/* Phones: text and photo stay side by side, so the text column is set smaller. */
+@media (max-width: 639px) {
+  .hero-title { font-size: clamp(1.5rem, 6.6vw, 2rem); line-height: 1.04; text-wrap: balance; }
+  /* Let the headline wrap naturally in the narrow column instead of the two authored desktop lines. */
+  .hero-title .line, .hero-title [data-line] { display: inline; }
+  .hero-sub { font-size: 0.9375rem; line-height: 1.45; }
+  .hero-actions .btn { min-height: 2.75rem; padding: 0.55rem 0.9rem; font-size: 0.9375rem; }
+  .hero-actions .link { font-size: 0.9375rem; }
+  .hero-actions .btn .arrow { display: none; }
+  .hero-tag { font-size: 0.875rem; line-height: 1.3; padding-top: 0.6rem; }
+}
+
 .bigname {
   font-size: clamp(7rem, 27vw, 30rem);
   font-weight: 500;

@@ -25,7 +25,7 @@ export default function Header() {
       <div className="wrap flex h-[4.75rem] items-center justify-between gap-6">
         <a href="#top" className="flex items-center gap-3 no-underline" aria-label="Mgabhi & Famaly Construction, back to top">
           <img src="/brand/mark-charcoal.png" alt="" width={600} height={520} className="h-11 w-auto" />
-          <span className="small leading-[1.15]">
+          <span className="small leading-[1.15] max-[379px]:sr-only">
             <span className="block whitespace-nowrap font-medium">Mgabhi &amp; Famaly</span>
             <span className="hidden text-ink-soft sm:block">Construction Pty Ltd</span>
           </span>

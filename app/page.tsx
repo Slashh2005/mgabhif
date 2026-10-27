@@ -98,26 +98,26 @@ export default function Home() {
       <main id="main">
         {/* ------------------------------------------------ Hero */}
         <section id="top" className="on-dark bg-navy text-white" aria-labelledby="hero-title">
-          <div className="grid lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
-            <div className="flex flex-col justify-between gap-14 px-[var(--margin)] pb-12 pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
+          <div className="hero grid grid-cols-[minmax(0,1fr)_40%] lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
+            <div className="flex flex-col justify-between gap-10 pb-8 pl-[var(--margin)] pr-4 pt-8 sm:gap-14 sm:pb-12 sm:pr-[var(--margin)] sm:pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
               <div>
                 <h1 id="hero-title" className="hero-title lines">
                   <span className="line">
                     <span data-line style={{ ["--i" as string]: 0 }}>
                       Driving Africa&rsquo;s mining
                     </span>
-                  </span>
+                  </span>{" "}
                   <span className="line">
                     <span data-line style={{ ["--i" as string]: 1 }}>
                       &amp; logistics future
                     </span>
                   </span>
                 </h1>
-                <p className="statement mt-8 max-w-[36ch] text-white/85" data-load style={{ ["--d" as string]: "420ms" }}>
+                <p className="hero-sub statement mt-5 max-w-[36ch] text-white/85 sm:mt-8" data-load style={{ ["--d" as string]: "420ms" }}>
                   Specialists in commodity export, mining services, petroleum supply, and plant hire across Southern
                   Africa&rsquo;s industrial heartlands.
                 </p>
-                <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4" data-load style={{ ["--d" as string]: "520ms" }}>
+                <div className="hero-actions mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 sm:mt-10 sm:gap-y-4" data-load style={{ ["--d" as string]: "520ms" }}>
                   <a href="#contact" className="btn btn--light">
                     Request Partnership <span className="arrow" aria-hidden="true">→</span>
                   </a>
@@ -127,7 +127,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4" data-load style={{ ["--d" as string]: "640ms" }}>
+              <ul className="hero-tags grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-y-6 xl:grid-cols-4" data-load style={{ ["--d" as string]: "640ms" }}>
                 {[
                   ["Mining", "Experience"],
                   ["Commodity", "Export"],
@@ -142,7 +142,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <figure className="relative m-0 min-h-[70svh] overflow-hidden bg-[#7aa3cf] lg:col-span-4 lg:min-h-0" data-open>
+            <figure className="relative m-0 overflow-hidden bg-[#7aa3cf] lg:col-span-4" data-open>
               <img
                 src={IMG.heroPlant}
                 alt="A spiral concentrator plant in yellow and black steel framing above a fresh heap of wet concentrate."
