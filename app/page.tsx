@@ -12,7 +12,7 @@ const IMG = {
   plantSite: "/images/plant-site.jpg",
   stockpiles: "/images/stockpiles-hills.jpg",
   engineer: "/images/photo-site-engineer-Bs-M25aG.jpg",
-  export: "/images/service-export-DzktsE46.jpg",
+  wash: "/images/photo-wash-plant-C1UBEhI5.jpg",
   petroleum: "/images/service-petroleum-BLTszwTT.jpg",
   chrome: "/images/photo-chrome-workers-CyUcFmoo.jpg",
 };
@@ -33,11 +33,9 @@ const verticals = [
     for: "Complex mining and infrastructure projects",
     img: IMG.loader,
     alt: "A yellow front-end loader with a full bucket working on a sandy site under a blue sky.",
-    caption: "Front-end loader on site",
     w: 960,
     h: 1280,
-    box: "w-full aspect-[4/5]",
-    pos: "40% 60%",
+    pos: "45% 55%",
   },
   {
     id: "commodity-export",
@@ -46,13 +44,11 @@ const verticals = [
     text: "Strategic offtake agreements and global trade for bulk minerals and metallurgical coal.",
     supplied: "Coal, chrome and copper",
     for: "International markets, through offtake agreements",
-    img: IMG.export,
-    alt: "A long train of loaded ore wagons at a rail siding, stockpiles of coal in the foreground.",
-    caption: "Loaded wagons at a rail siding",
-    w: 720,
-    h: 527,
-    box: "w-[85%] aspect-[3/2] ml-auto",
-    pos: "60% 50%",
+    img: IMG.stockpiles,
+    alt: "Stockpiles of processed material on a site below green, rocky hills.",
+    w: 960,
+    h: 1280,
+    pos: "50% 52%",
   },
   {
     id: "petroleum-supply",
@@ -63,11 +59,9 @@ const verticals = [
     for: "Remote operations and mine sites",
     img: IMG.petroleum,
     alt: "Bulk diesel tanks being installed on a site, with a fuel tanker and light vehicles alongside.",
-    caption: "Bulk diesel tanks and tanker",
     w: 720,
     h: 704,
-    box: "w-[70%] aspect-square",
-    pos: "45% 50%",
+    pos: "50% 55%",
   },
   {
     id: "mining-services",
@@ -78,11 +72,9 @@ const verticals = [
     for: "Mine owners and operators across our six regions",
     img: IMG.plantSite,
     alt: "A processing site with spiral concentrators, a pump and a dewatering screen among eucalyptus trees.",
-    caption: "Processing plant on site",
     w: 960,
     h: 1280,
-    box: "w-[85%] aspect-[4/5] ml-auto",
-    pos: "50% 45%",
+    pos: "50% 40%",
   },
 ];
 
@@ -105,7 +97,7 @@ export default function Home() {
               width={960}
               height={1280}
               fetchPriority="high"
-              className="drift absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+              className="photo drift absolute inset-0 object-[50%_40%]"
             />
           </figure>
           <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
@@ -202,14 +194,14 @@ export default function Home() {
         <section id="founder" className="bg-paper-2 py-[var(--section)]" aria-labelledby="founder-title">
           <div className="wrap grid12 items-end gap-y-12">
             <figure className="col-span-12 m-0 md:col-span-6 lg:col-span-6" data-reveal>
-              <div className="overflow-hidden bg-paper-3">
+              <div className="frame aspect-[4/5]">
                 <img
                   src={IMG.founderChair}
                   alt="Melvin, founder of Mgabhi & Famaly Construction, on a phone call in a blue armchair in an office lobby."
                   width={1200}
                   height={1600}
                   loading="lazy"
-                  className="aspect-[4/5] w-full object-cover object-[60%_35%]"
+                  className="photo object-[60%_35%]"
                 />
               </div>
             </figure>
@@ -226,15 +218,17 @@ export default function Home() {
                 Partners deal directly with Melvin: the calls, the site visits and the
                 negotiations at the table.
               </p>
-              <figure className="m-0 mt-10 grid grid-cols-[minmax(0,9rem)_1fr] items-end gap-5" data-reveal style={{ ["--i" as string]: 3 }}>
-                <img
-                  src={IMG.founderBoardroom}
-                  alt="Melvin standing at the head of a long boardroom table."
-                  width={1200}
-                  height={1600}
-                  loading="lazy"
-                  className="aspect-[3/4] w-full object-cover object-[55%_30%]"
-                />
+              <figure className="m-0 mt-10 grid grid-cols-[minmax(0,10rem)_1fr] items-end gap-5" data-reveal style={{ ["--i" as string]: 3 }}>
+                <div className="frame aspect-[4/5]">
+                  <img
+                    src={IMG.founderBoardroom}
+                    alt="Melvin standing at the head of a long boardroom table."
+                    width={1200}
+                    height={1600}
+                    loading="lazy"
+                    className="photo object-[55%_30%]"
+                  />
+                </div>
                 <figcaption className="small text-ink-soft">Melvin in the boardroom.</figcaption>
               </figure>
             </div>
@@ -278,17 +272,17 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-[clamp(3rem,6vw,6rem)] grid grid-cols-12 gap-[var(--gutter)]">
+            <div className="mt-[clamp(3rem,6vw,6rem)] grid grid-cols-1 gap-[var(--gutter)] sm:grid-cols-3">
               {[
-                { src: IMG.stockpiles, alt: "Stockpiles of processed material below green, rocky hills.", cap: "Stockpiles below the hills", span: "col-span-12 md:col-span-5", ratio: "aspect-[4/5]", w: 960, h: 1280 },
-                { src: IMG.chrome, alt: "Two workers in reflective gear bag samples from a chrome ore stockpile.", cap: "Sampling a chrome stockpile", span: "col-span-6 md:col-span-4 md:mt-24", ratio: "aspect-[4/5]", w: 720, h: 708 },
-                { src: IMG.engineer, alt: "A site engineer in a hard hat and reflective vest in front of a coal stockpile.", cap: "Site engineer at a coal stockpile", span: "col-span-6 md:col-span-3 md:mt-48", ratio: "aspect-[3/4]", w: 720, h: 808 },
+                { src: IMG.chrome, alt: "Two workers in reflective gear bag samples from a chrome ore stockpile.", cap: "Sampling a chrome stockpile", w: 720, h: 708, pos: "50% 50%" },
+                { src: IMG.engineer, alt: "A site engineer in a hard hat and reflective vest in front of a coal stockpile.", cap: "Site engineer at a coal stockpile", w: 720, h: 808, pos: "50% 40%" },
+                { src: IMG.wash, alt: "A wash plant with its conveyor and spiral tower beside fresh stockpiles.", cap: "Wash plant on site", w: 720, h: 699, pos: "65% 50%" },
               ].map((p, i) => (
-                <figure key={p.src} className={`m-0 ${p.span}`} data-reveal style={{ ["--i" as string]: i }}>
-                  <div className="overflow-hidden bg-paper-3">
-                    <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" className={`${p.ratio} w-full object-cover`} />
+                <figure key={p.src} className="m-0" data-reveal style={{ ["--i" as string]: i }}>
+                  <div className="frame aspect-[4/5]">
+                    <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" className="photo" style={{ objectPosition: p.pos }} />
                   </div>
-                  <figcaption className="small mt-2 text-ink-soft">{p.cap}</figcaption>
+                  <figcaption className="small mt-3 text-ink-soft">{p.cap}</figcaption>
                 </figure>
               ))}
             </div>
@@ -297,43 +291,27 @@ export default function Home() {
 
         {/* ------------------------------------------------ Services */}
         <section id="services" className="bg-paper-2 py-[var(--section)]" aria-labelledby="services-title">
-          <div className="wrap grid12 gap-y-8">
-            <div className="col-span-12 lg:col-span-8 lg:col-start-5">
-              <h2 id="services-title" className="head" data-reveal>
+          <div className="wrap">
+            <div className="grid12 items-end gap-y-6">
+              <h2 id="services-title" className="head col-span-12 lg:col-span-6" data-reveal>
                 Operational verticals
               </h2>
-              <p className="statement mt-6 max-w-[34ch] text-ink-soft" data-reveal style={{ ["--i" as string]: 1 }}>
+              <p className="statement col-span-12 text-ink-soft lg:col-span-5 lg:col-start-8" data-reveal style={{ ["--i" as string]: 1 }}>
                 End-to-end services from extraction and processing through to international commodity markets.
               </p>
             </div>
 
-            <nav aria-label="Verticals" className="col-span-3 row-span-5 hidden lg:block">
-              <ul className="sticky top-32 space-y-2">
-                {verticals.map((v) => (
-                  <li key={v.id}>
-                    <a href={`#${v.id}`} className="navlink">
-                      {v.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            {verticals.map((v) => (
-              <article
-                key={v.id}
-                id={v.id}
-                className="col-span-12 mt-[clamp(4rem,7vw,7.5rem)] grid grid-cols-12 gap-x-[var(--gutter)] gap-y-8 lg:col-span-8 lg:col-start-5"
-                aria-labelledby={`${v.id}-title`}
-              >
-                <div className="col-span-12 sm:col-span-6">
-                  <h3 id={`${v.id}-title`} className="statement font-medium tracking-[-0.03em] text-ink" data-reveal>
+            <div className="mt-[clamp(3rem,6vw,5.5rem)] grid gap-x-[var(--gutter)] gap-y-16 md:grid-cols-2">
+              {verticals.map((v, i) => (
+                <article key={v.id} id={v.id} aria-labelledby={`${v.id}-title`} data-reveal style={{ ["--i" as string]: i % 2 }}>
+                  <div className="frame aspect-[4/3]">
+                    <img src={v.img} alt={v.alt} width={v.w} height={v.h} loading="lazy" className="photo" style={{ objectPosition: v.pos }} />
+                  </div>
+                  <h3 id={`${v.id}-title`} className="card-title mt-7">
                     {v.name}
                   </h3>
-                  <p className="mt-4 max-w-[38ch]" data-reveal style={{ ["--i" as string]: 1 }}>
-                    {v.text}
-                  </p>
-                  <table className="particulars mt-7" data-reveal style={{ ["--i" as string]: 2 }}>
+                  <p className="mt-3 max-w-[46ch] text-ink-soft">{v.text}</p>
+                  <table className="particulars mt-6">
                     <caption className="sr-only">{v.name} particulars</caption>
                     <tbody>
                       <tr>
@@ -346,37 +324,23 @@ export default function Home() {
                       </tr>
                     </tbody>
                   </table>
-                  <a href="#contact" data-need={v.need} className="link mt-6 inline-block" data-reveal style={{ ["--i" as string]: 3 }}>
+                  <a href="#contact" data-need={v.need} className="link mt-6 inline-block">
                     Enquire about {v.name.toLowerCase()} <span aria-hidden="true">→</span>
                   </a>
-                </div>
-                <figure className="col-span-12 m-0 sm:col-span-6" data-reveal style={{ ["--i" as string]: 2 }}>
-                  <div className={`overflow-hidden bg-paper-3 ${v.box}`}>
-                    <img
-                      src={v.img}
-                      alt={v.alt}
-                      width={v.w}
-                      height={v.h}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-[900ms] ease-[var(--ease-soft)] hover:scale-[1.04]"
-                      style={{ objectPosition: v.pos }}
-                    />
-                  </div>
-                  <figcaption className={`small mt-2 text-ink-soft ${v.box.includes("ml-auto") ? "text-right" : ""}`}>{v.caption}</figcaption>
-                </figure>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ------------------------------------------------ Operations */}
         <section id="operations" className="py-[var(--section)]" aria-labelledby="operations-title">
           <div className="wrap">
-            <div className="grid12 gap-y-8">
-              <h2 id="operations-title" className="head col-span-12 lg:col-span-10" data-reveal>
+            <div className="grid12 items-end gap-y-6">
+              <h2 id="operations-title" className="head col-span-12 lg:col-span-7" data-reveal>
                 Strategic operations across six key regions
               </h2>
-              <p className="statement col-span-12 max-w-[40ch] text-ink-soft lg:col-span-7" data-reveal style={{ ["--i" as string]: 1 }}>
+              <p className="statement col-span-12 text-ink-soft lg:col-span-4 lg:col-start-9" data-reveal style={{ ["--i" as string]: 1 }}>
                 From the chrome belt of the North West to the coal heartland of Mpumalanga, our operations span
                 Africa&rsquo;s most resource-rich corridors.
               </p>
@@ -481,14 +445,16 @@ export default function Home() {
                   </table>
                 </div>
                 <figure className="m-0 mt-10 hidden lg:block" data-reveal style={{ ["--i" as string]: 3 }}>
-                  <img
-                    src={IMG.boardroom}
-                    alt="A boardroom with a long table under pendant lights."
-                    width={1200}
-                    height={1600}
-                    loading="lazy"
-                    className="aspect-[4/3] w-full object-cover object-[50%_55%]"
-                  />
+                  <div className="frame aspect-[4/3]">
+                    <img
+                      src={IMG.boardroom}
+                      alt="A boardroom with a long table under pendant lights."
+                      width={1200}
+                      height={1600}
+                      loading="lazy"
+                      className="photo object-[50%_55%]"
+                    />
+                  </div>
                   <figcaption className="small mt-3 text-char-soft">Where we meet our partners</figcaption>
                 </figure>
               </div>

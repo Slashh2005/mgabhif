@@ -106,7 +106,7 @@ export default function OperationsMap() {
   return (
     <div className="grid12 gap-y-12">
       <figure className="col-span-12 m-0 lg:sticky lg:top-28 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:self-start" data-reveal style={{ ["--i" as string]: 1 }}>
-        <div className="relative bg-paper-2">
+        <div className="relative overflow-hidden rounded-[var(--radius)] bg-paper-2">
           <svg
             viewBox="1760 470 880 545"
             className="block h-auto w-full"

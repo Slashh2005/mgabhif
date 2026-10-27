@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
-const archivo = Archivo({
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-archivo",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-ZA" className={archivo.variable}>
+    <html lang="en-ZA" className={geist.variable}>
       <head>
         {/* Hidden entrance states only apply when scripting works. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
