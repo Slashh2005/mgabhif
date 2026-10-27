@@ -306,10 +306,26 @@ a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1p
 /* ------------------------------------------------------------------
    Partner names: one sentence, one name lit at a time.
    ------------------------------------------------------------------ */
-.names .name { color: rgb(255 255 255 / 0.5); transition: color 450ms var(--ease-out); }
-.names li + li::before { content: "·"; color: rgb(255 255 255 / 0.35); margin: 0 0.35em 0 0; }
-.names .name.is-lit { color: #fff; }
-@media (prefers-reduced-motion: reduce) { .names .name { color: #fff; } }
+/* Partner strip: the names run to the right in a seamless loop. */
+.marquee { overflow: hidden; padding-block: 1.75rem; border-block: 1px solid rgb(255 255 255 / 0.18); }
+.marquee__track { display: flex; width: max-content; }
+.marquee__group { display: flex; flex-shrink: 0; }
+.marquee__item {
+  display: flex; align-items: center; white-space: nowrap;
+  font-size: var(--text-head); font-weight: 500; letter-spacing: -0.035em; line-height: 1;
+  color: #fff; padding-inline: 0.55em;
+}
+.marquee__item::after { content: ""; width: 0.22em; height: 0.22em; margin-left: 1.1em; background: var(--color-navy-soft); border-radius: 50%; }
+@media (prefers-reduced-motion: no-preference) {
+  .marquee__track { animation: marquee-right 38s linear infinite; }
+  .marquee:hover .marquee__track { animation-play-state: paused; }
+}
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { width: auto; }
+  .marquee__group + .marquee__group { display: none; }
+  .marquee__group { flex-wrap: wrap; padding-inline: var(--margin); }
+}
 
 /* ------------------------------------------------------------------
    Enquiry slip (the one form on the page, so its fields are ruled).

@@ -3,12 +3,10 @@
 import { useEffect } from "react";
 
 /**
- * The page's small motion layer: reveal-once, rolling figures
- * and the lit partner name. Content is visible without it.
+ * The page's small motion layer: reveal-once and rolling figures. Content is visible without it.
  */
 export default function Motion() {
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const cleanups: Array<() => void> = [];
 
     // Rolling figures: the real value stays readable for screen readers.
@@ -62,30 +60,6 @@ export default function Motion() {
       }, 2500);
       cleanups.push(() => clearTimeout(t));
     }
-
-    // Partner names: one lit at a time, paused when off screen.
-    document.querySelectorAll<HTMLElement>("[data-names]").forEach((root) => {
-      const names = [...root.querySelectorAll<HTMLElement>(".name")];
-      if (!names.length || reduced) return;
-      let i = 0;
-      let timer = 0;
-      const tick = () => {
-        names.forEach((n, j) => n.classList.toggle("is-lit", j === i));
-        i = (i + 1) % names.length;
-      };
-      const io = new IntersectionObserver(([e]) => {
-        clearInterval(timer);
-        if (e.isIntersecting && !document.hidden) {
-          tick();
-          timer = window.setInterval(tick, 2000);
-        }
-      });
-      io.observe(root);
-      cleanups.push(() => {
-        io.disconnect();
-        clearInterval(timer);
-      });
-    });
 
     return () => cleanups.forEach((fn) => fn());
   }, []);

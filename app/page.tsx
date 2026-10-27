@@ -17,6 +17,8 @@ const IMG = {
   chrome: "/images/photo-chrome-workers-CyUcFmoo.jpg",
 };
 
+const PARTNERS = ["Exxaro", "Black Wattle", "Mooinooi", "Mining Indaba", "Mpumalanga DMR"];
+
 const PHONE = "079 581 3927";
 const TEL = "tel:+27795813927";
 const EMAIL = "info@mgabhi.co.za";
@@ -412,15 +414,27 @@ export default function Home() {
               </figure>
             </div>
 
-            <div className="mt-[clamp(5rem,9vw,9rem)]" data-names data-reveal>
-              <h3 className="statement text-navy-soft">Partners and industry recognition</h3>
-              <ul className="names head mt-5 flex flex-wrap gap-y-2 !leading-[1.05]">
-                {["Exxaro", "Black Wattle", "Mooinooi", "Mining Indaba", "Mpumalanga DMR"].map((n) => (
-                  <li key={n} className="mr-[0.35em] whitespace-nowrap">
-                    <span className="name">{n}</span>
-                  </li>
-                ))}
-              </ul>
+            <h3 className="statement mt-[clamp(5rem,9vw,9rem)] text-navy-soft" data-reveal>
+              Partners and industry recognition
+            </h3>
+          </div>
+
+          <div className="marquee mt-8" data-reveal>
+            <ul className="sr-only">
+              {PARTNERS.map((n) => (
+                <li key={n}>{n}</li>
+              ))}
+            </ul>
+            <div className="marquee__track" aria-hidden="true">
+              {[0, 1].map((copy) => (
+                <ul key={copy} className="marquee__group">
+                  {[...PARTNERS, ...PARTNERS].map((n, i) => (
+                    <li key={`${n}-${i}`} className="marquee__item">
+                      {n}
+                    </li>
+                  ))}
+                </ul>
+              ))}
             </div>
           </div>
         </section>
