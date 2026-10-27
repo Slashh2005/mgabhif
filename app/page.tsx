@@ -97,8 +97,20 @@ export default function Home() {
 
       <main id="main">
         {/* ------------------------------------------------ Hero */}
-        <section id="top" className="on-dark bg-navy text-white" aria-labelledby="hero-title">
-          <div className="hero grid grid-cols-[minmax(0,1fr)_40%] lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
+        <section id="top" className="on-dark relative overflow-hidden bg-navy text-white" aria-labelledby="hero-title">
+          <figure className="hero-photo absolute inset-y-0 right-0 m-0 overflow-hidden bg-[#7aa3cf]" data-open>
+            <img
+              src={IMG.heroPlant}
+              alt="A spiral concentrator plant in yellow and black steel framing above a fresh heap of wet concentrate."
+              width={960}
+              height={1280}
+              fetchPriority="high"
+              className="drift absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+            />
+          </figure>
+          <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
+
+          <div className="hero relative grid grid-cols-[minmax(0,1fr)_40%] lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
             <div className="flex flex-col justify-between gap-10 pb-8 pl-[var(--margin)] pr-4 pt-8 sm:gap-14 sm:pb-12 sm:pr-[var(--margin)] sm:pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
               <div>
                 <h1 id="hero-title" className="hero-title lines">
@@ -142,16 +154,6 @@ export default function Home() {
               </ul>
             </div>
 
-            <figure className="relative m-0 overflow-hidden bg-[#7aa3cf] lg:col-span-4" data-open>
-              <img
-                src={IMG.heroPlant}
-                alt="A spiral concentrator plant in yellow and black steel framing above a fresh heap of wet concentrate."
-                width={960}
-                height={1280}
-                fetchPriority="high"
-                className="drift absolute inset-0 h-full w-full object-cover object-[50%_40%]"
-              />
-            </figure>
           </div>
         </section>
 
