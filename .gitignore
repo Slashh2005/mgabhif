@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.taste-skill/inspect/
+.impeccable/review/
+.impeccable/config.local.json
+__pycache__/
+.taste-skill/inspect-log.txt
