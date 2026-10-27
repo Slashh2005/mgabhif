@@ -1,17 +1,20 @@
 import Header from "@/components/Header";
 import Motion from "@/components/Motion";
-import Seal from "@/components/Seal";
 import OperationsMap from "@/components/OperationsMap";
 import EnquirySlip from "@/components/EnquirySlip";
 
 const IMG = {
-  chrome: "/images/photo-chrome-workers-CyUcFmoo.jpg",
+  heroPlant: "/images/spiral-plant-hq.jpg",
+  founderChair: "/images/founder-chair.jpg",
+  founderBoardroom: "/images/founder-boardroom.jpg",
+  boardroom: "/images/boardroom.jpg",
+  loader: "/images/loader.jpg",
+  plantSite: "/images/plant-site.jpg",
+  stockpiles: "/images/stockpiles-hills.jpg",
   engineer: "/images/photo-site-engineer-Bs-M25aG.jpg",
-  partnership: "/images/photo-partnership-rx0hhlJI.jpg",
-  spiral: "/images/photo-spiral-plant-Dsh5nphL.jpg",
-  wash: "/images/photo-wash-plant-C1UBEhI5.jpg",
   export: "/images/service-export-DzktsE46.jpg",
   petroleum: "/images/service-petroleum-BLTszwTT.jpg",
+  chrome: "/images/photo-chrome-workers-CyUcFmoo.jpg",
 };
 
 const PHONE = "079 581 3927";
@@ -26,13 +29,13 @@ const verticals = [
     text: "Fleet of specialized earthmoving equipment, drilling machinery, and on-site support units.",
     supplied: "Earthmoving and drilling machinery, on-site support units",
     for: "Complex mining and infrastructure projects",
-    img: IMG.wash,
-    alt: "A wash plant with its conveyor and spiral tower beside fresh stockpiles on a muddy site.",
-    caption: "Wash plant on site",
-    w: 720,
-    h: 699,
+    img: IMG.loader,
+    alt: "A yellow front-end loader with a full bucket working on a sandy site under a blue sky.",
+    caption: "Front-end loader on site",
+    w: 960,
+    h: 1280,
     box: "w-full aspect-[4/5]",
-    pos: "70% 50%",
+    pos: "40% 60%",
   },
   {
     id: "commodity-export",
@@ -61,7 +64,7 @@ const verticals = [
     caption: "Bulk diesel tanks and tanker",
     w: 720,
     h: 704,
-    box: "w-[62%] aspect-square",
+    box: "w-[70%] aspect-square",
     pos: "45% 50%",
   },
   {
@@ -70,14 +73,14 @@ const verticals = [
     need: "Mining services",
     text: "Operations, exploration, extraction and consultancy, from the first survey to a working pit.",
     supplied: "Operations, exploration, extraction, consultancy",
-    for: "Mine owners and operators across our five regions",
-    img: IMG.spiral,
-    alt: "A tall spiral concentrator plant in steel framing above a heap of black concentrate.",
-    caption: "Spiral concentrator plant",
-    w: 720,
-    h: 949,
-    box: "w-[78%] aspect-[4/5] ml-auto",
-    pos: "50% 30%",
+    for: "Mine owners and operators across our six regions",
+    img: IMG.plantSite,
+    alt: "A processing site with spiral concentrators, a pump and a dewatering screen among eucalyptus trees.",
+    caption: "Processing plant on site",
+    w: 960,
+    h: 1280,
+    box: "w-[85%] aspect-[4/5] ml-auto",
+    pos: "50% 45%",
   },
 ];
 
@@ -91,87 +94,61 @@ export default function Home() {
       <Motion />
 
       <main id="main">
-        {/* ------------------------------------------------ Hero / certificate cover */}
-        <section id="top" className="wrap relative pb-[clamp(4rem,6vw,7rem)] pt-[clamp(1.75rem,3vw,3rem)]" aria-labelledby="hero-title">
-          <div className="absolute right-[var(--margin)] top-[clamp(1.75rem,3vw,3rem)] hidden xl:block">
-            <Seal ring="MGABHI & FAMALY · EST. 2022 · MIDRAND · " centre={["Safety", "first"]} size={212} delay={900} />
-          </div>
-          <h1 id="hero-title" className="display lines max-w-[17ch] lg:max-w-none">
-            <span className="line">
-              <span data-line style={{ ["--i" as string]: 0 }}>
-                Driving Africa&rsquo;s mining
-              </span>
-            </span>
-            <span className="line">
-              <span data-line style={{ ["--i" as string]: 1 }}>
-                &amp; logistics future
-              </span>
-            </span>
-          </h1>
-
-          <div className="grid12 mt-[clamp(1.75rem,3vw,3rem)] gap-y-10 md:grid-rows-[auto_1fr]">
-            <div className="col-span-12 md:col-span-6 md:col-start-1 md:row-start-1 lg:col-span-5">
-              <p className="statement max-w-[36ch]" data-load style={{ ["--d" as string]: "380ms" }}>
-                Specialists in commodity export, mining services, petroleum supply, and plant hire across Southern
-                Africa&rsquo;s industrial heartlands.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4" data-load style={{ ["--d" as string]: "460ms" }}>
-                <a href="#contact" className="btn">
-                  Request Partnership <span className="arrow" aria-hidden="true">→</span>
-                </a>
-                <a href="#services" className="link">
-                  View Services
-                </a>
+        {/* ------------------------------------------------ Hero */}
+        <section id="top" className="on-dark bg-navy text-white" aria-labelledby="hero-title">
+          <div className="grid lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
+            <div className="flex flex-col justify-between gap-14 px-[var(--margin)] pb-12 pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
+              <div>
+                <h1 id="hero-title" className="hero-title lines">
+                  <span className="line">
+                    <span data-line style={{ ["--i" as string]: 0 }}>
+                      Driving Africa&rsquo;s mining
+                    </span>
+                  </span>
+                  <span className="line">
+                    <span data-line style={{ ["--i" as string]: 1 }}>
+                      &amp; logistics future
+                    </span>
+                  </span>
+                </h1>
+                <p className="statement mt-8 max-w-[36ch] text-white/85" data-load style={{ ["--d" as string]: "420ms" }}>
+                  Specialists in commodity export, mining services, petroleum supply, and plant hire across Southern
+                  Africa&rsquo;s industrial heartlands.
+                </p>
+                <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4" data-load style={{ ["--d" as string]: "520ms" }}>
+                  <a href="#contact" className="btn btn--light">
+                    Request Partnership <span className="arrow" aria-hidden="true">→</span>
+                  </a>
+                  <a href="#services" className="link">
+                    View Services
+                  </a>
+                </div>
               </div>
+
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4" data-load style={{ ["--d" as string]: "640ms" }}>
+                {[
+                  ["Mining", "Experience"],
+                  ["Commodity", "Export"],
+                  ["South African", "Ops"],
+                  ["Safety", "Compliant"],
+                ].map(([a, b]) => (
+                  <li key={a} className="hero-tag">
+                    <span className="block font-medium">{a}</span>
+                    <span className="block text-navy-soft">{b}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="col-span-12 md:col-span-6 md:col-start-1 md:row-start-2 lg:col-span-5">
-              <table className="particulars md:mt-2" data-load style={{ ["--d" as string]: "560ms" }}>
-                <caption className="sr-only">Company particulars</caption>
-                <tbody>
-                  <tr>
-                    <th scope="row">Established</th>
-                    <td>2022, South Africa</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Head office</th>
-                    <td>Waterfall, Midrand</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Mining experience</th>
-                    <td>10+ years in the industry</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Commodity export</th>
-                    <td>Coal, chrome, copper</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">South African ops</th>
-                    <td>Five operating regions</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Safety</th>
-                    <td>Compliant</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <figure className="relative col-span-12 row-start-2 m-0 md:col-span-6 md:col-start-7 md:row-span-2 md:row-start-1 lg:col-span-7 lg:col-start-6">
-              <div className="overflow-hidden bg-[#3a4352]" data-open>
-                <img
-                  src={IMG.chrome}
-                  alt="Two workers in reflective gear bag samples from a chrome ore stockpile under a dark sky."
-                  width={720}
-                  height={708}
-                  fetchPriority="high"
-                  className="drift aspect-[4/5] w-full object-cover sm:aspect-[5/4] md:aspect-[1/2] lg:aspect-[6/5]"
-                />
-              </div>
-              <figcaption className="small mt-3 flex justify-between gap-4 text-ink-soft">
-                <span>Sampling a chrome stockpile</span>
-                <span>On site, South Africa</span>
-              </figcaption>
+            <figure className="relative m-0 min-h-[70svh] overflow-hidden bg-[#7aa3cf] lg:col-span-4 lg:min-h-0" data-open>
+              <img
+                src={IMG.heroPlant}
+                alt="A spiral concentrator plant in yellow and black steel framing above a fresh heap of wet concentrate."
+                width={960}
+                height={1280}
+                fetchPriority="high"
+                className="drift absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+              />
             </figure>
           </div>
         </section>
@@ -204,14 +181,6 @@ export default function Home() {
 
             <div className="col-span-12 lg:col-span-9 lg:col-start-4" data-reveal style={{ ["--i" as string]: 1 }}>
               <p className="statement">
-                <img
-                  src={IMG.engineer}
-                  alt="A Mgabhi site engineer in a hard hat and reflective vest in front of a coal stockpile."
-                  width={720}
-                  height={808}
-                  loading="lazy"
-                  className="float-left mr-[0.5em] mt-[0.2em] aspect-square w-[4.6em] object-cover object-[50%_25%] sm:w-[3.7em]"
-                />
                 Headquartered at 22 Magwa Crescent, Waterfall, Midrand, Mgabhi and Famaly Construction Pty Ltd is a
                 diversified company operating at the intersection of heavy infrastructure and high-volume commodity
                 trading.
@@ -225,19 +194,60 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ------------------------------------------------ Experience in figures */}
-        <section id="experience" className="bg-paper-2 py-[var(--section)]" aria-labelledby="experience-title">
-          <div className="wrap grid12 items-center gap-y-12">
-            <div className="col-span-12 lg:col-span-8">
-              <h2 id="experience-title" className="head" data-reveal>
+        {/* ------------------------------------------------ Founder */}
+        <section id="founder" className="bg-paper-2 py-[var(--section)]" aria-labelledby="founder-title">
+          <div className="wrap grid12 items-end gap-y-12">
+            <figure className="col-span-12 m-0 md:col-span-6 lg:col-span-6" data-reveal>
+              <div className="overflow-hidden bg-paper-3">
+                <img
+                  src={IMG.founderChair}
+                  alt="Melvin, founder of Mgabhi & Famaly Construction, on a phone call in a blue armchair in an office lobby."
+                  width={1200}
+                  height={1600}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-[60%_35%]"
+                />
+              </div>
+            </figure>
+
+            <div className="col-span-12 md:col-span-6 lg:col-span-5 lg:col-start-8">
+              <h2 id="founder-title" className="head" data-reveal>
+                Meet our founder
+              </h2>
+              <p className="statement mt-8" data-reveal style={{ ["--i" as string]: 1 }}>
+                Mgabhi &amp; Famaly Construction was founded in 2022 by Melvin, who still leads the company from our
+                head office in Midrand.
+              </p>
+              <p className="mt-6 max-w-[46ch] text-ink-soft" data-reveal style={{ ["--i" as string]: 2 }}>
+                Partners deal directly with Melvin: the calls, the site visits and the
+                negotiations at the table.
+              </p>
+              <figure className="m-0 mt-10 grid grid-cols-[minmax(0,9rem)_1fr] items-end gap-5" data-reveal style={{ ["--i" as string]: 3 }}>
+                <img
+                  src={IMG.founderBoardroom}
+                  alt="Melvin standing at the head of a long boardroom table."
+                  width={1200}
+                  height={1600}
+                  loading="lazy"
+                  className="aspect-[3/4] w-full object-cover object-[55%_30%]"
+                />
+                <figcaption className="small text-ink-soft">Melvin in the boardroom.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        {/* ------------------------------------------------ Experience */}
+        <section id="experience" className="py-[var(--section)]" aria-labelledby="experience-title">
+          <div className="wrap">
+            <div className="grid12 gap-y-10">
+              <h2 id="experience-title" className="head col-span-12 lg:col-span-6" data-reveal>
                 Experience on the ground
               </h2>
-              <p className="statement mt-10 max-w-[34ch] text-ink-soft" data-reveal style={{ ["--i" as string]: 1 }}>
+              <p className="statement col-span-12 text-ink-soft lg:col-span-6" data-reveal style={{ ["--i" as string]: 1 }}>
                 Our team brings{" "}
-                <span className="font-medium text-navy">
-                  <span className="whitespace-nowrap">
-                    <span data-roll>10</span>+&nbsp;years
-                  </span>
+                <span className="whitespace-nowrap font-medium text-navy">
+                  <span data-roll>10</span>+&nbsp;years
                 </span>{" "}
                 of industry experience to{" "}
                 <span className="font-medium text-navy">
@@ -249,7 +259,7 @@ export default function Home() {
                 across{" "}
                 <span className="font-medium text-navy">
                   <span className="whitespace-nowrap">
-                    <span data-roll>5</span>&nbsp;operating
+                    <span data-roll>6</span>&nbsp;operating
                   </span>{" "}
                   regions
                 </span>
@@ -263,55 +273,27 @@ export default function Home() {
                 on every site.
               </p>
             </div>
-            <div className="col-span-12 flex justify-start lg:col-span-4 lg:justify-end">
-              <Seal ring="SAFETY COMPLIANCE · B-BBEE LEVEL 1 · " centre={["100%", "safe"]} size={260} className="w-[min(260px,60vw)]" />
+
+            <div className="mt-[clamp(3rem,6vw,6rem)] grid grid-cols-12 gap-[var(--gutter)]">
+              {[
+                { src: IMG.stockpiles, alt: "Stockpiles of processed material below green, rocky hills.", cap: "Stockpiles below the hills", span: "col-span-12 md:col-span-5", ratio: "aspect-[4/5]", w: 960, h: 1280 },
+                { src: IMG.chrome, alt: "Two workers in reflective gear bag samples from a chrome ore stockpile.", cap: "Sampling a chrome stockpile", span: "col-span-6 md:col-span-4 md:mt-24", ratio: "aspect-[4/5]", w: 720, h: 708 },
+                { src: IMG.engineer, alt: "A site engineer in a hard hat and reflective vest in front of a coal stockpile.", cap: "Site engineer at a coal stockpile", span: "col-span-6 md:col-span-3 md:mt-48", ratio: "aspect-[3/4]", w: 720, h: 808 },
+              ].map((p, i) => (
+                <figure key={p.src} className={`m-0 ${p.span}`} data-reveal style={{ ["--i" as string]: i }}>
+                  <div className="overflow-hidden bg-paper-3">
+                    <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" className={`${p.ratio} w-full object-cover`} />
+                  </div>
+                  <figcaption className="small mt-2 text-ink-soft">{p.cap}</figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ------------------------------------------------ Inspection: one frame, three distances */}
-        <section className="inspect" data-inspect aria-labelledby="inspect-title">
-          <div className="inspect__stage" data-stage="1">
-            <div className="wrap grid12 w-full items-center gap-y-6">
-              <h2 id="inspect-title" className="display col-span-12 text-center md:col-span-12">
-                <span className="block">From ore</span>
-                <span className="sr-only"> to export grade</span>
-              </h2>
-              <div className="col-span-12 hidden md:col-span-3 md:block md:self-center">
-                <p className="inspect__note is-on max-w-[26ch]" data-note="1">
-                  <span className="font-medium">At a distance.</span> A spiral concentrator plant on site, seen whole.
-                </p>
-              </div>
-              <div className="col-span-12 flex justify-center md:col-span-6">
-                <div className="inspect__frame aspect-[4/5] w-[62vw] md:w-[min(28vw,52svh)]">
-                  <img src={IMG.spiral} alt="A spiral concentrator plant above a heap of black concentrate." width={720} height={949} loading="lazy" />
-                </div>
-              </div>
-              <div className="col-span-12 max-w-[34ch] md:col-span-3 md:self-center">
-                <p className="inspect__note" data-note="2">
-                  <span className="font-medium">Up close.</span> The spirals separate heavy mineral from lighter
-                  material, using water and gravity.
-                </p>
-                <p className="inspect__note mt-5" data-note="3">
-                  <span className="font-medium">At the base.</span> Concentrate is stockpiled, sampled and readied
-                  for offtake.
-                </p>
-              </div>
-              <p className="display col-span-12 text-center" aria-hidden="true">
-                to export grade
-              </p>
-            </div>
-          </div>
-          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-            <div data-marker="1" className="absolute top-[0%] h-[33%] w-0" />
-            <div data-marker="2" className="absolute top-[36%] h-[28%] w-0" />
-            <div data-marker="3" className="absolute top-[66%] h-[34%] w-0" />
-          </div>
-        </section>
-
-        {/* ------------------------------------------------ Services: the specification */}
-        <section id="services" className="wrap py-[var(--section)]" aria-labelledby="services-title">
-          <div className="grid12 gap-y-8">
+        {/* ------------------------------------------------ Services */}
+        <section id="services" className="bg-paper-2 py-[var(--section)]" aria-labelledby="services-title">
+          <div className="wrap grid12 gap-y-8">
             <div className="col-span-12 lg:col-span-8 lg:col-start-5">
               <h2 id="services-title" className="head" data-reveal>
                 Operational verticals
@@ -384,11 +366,11 @@ export default function Home() {
         </section>
 
         {/* ------------------------------------------------ Operations */}
-        <section id="operations" className="bg-paper-2 py-[var(--section)]" aria-labelledby="operations-title">
+        <section id="operations" className="py-[var(--section)]" aria-labelledby="operations-title">
           <div className="wrap">
             <div className="grid12 gap-y-8">
               <h2 id="operations-title" className="head col-span-12 lg:col-span-10" data-reveal>
-                Strategic operations across five key regions
+                Strategic operations across six key regions
               </h2>
               <p className="statement col-span-12 max-w-[40ch] text-ink-soft lg:col-span-7" data-reveal style={{ ["--i" as string]: 1 }}>
                 From the chrome belt of the North West to the coal heartland of Mpumalanga, our operations span
@@ -443,7 +425,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ------------------------------------------------ Contact: the enquiry slip */}
+        {/* ------------------------------------------------ Contact */}
         <section id="contact" className="on-dark bg-char py-[var(--section)] text-white" aria-labelledby="contact-title">
           <div className="wrap">
             <h2 id="contact-title" className="head max-w-[20ch]" data-reveal>
@@ -484,14 +466,14 @@ export default function Home() {
                 </div>
                 <figure className="m-0 mt-10 hidden lg:block" data-reveal style={{ ["--i" as string]: 3 }}>
                   <img
-                    src={IMG.partnership}
-                    alt="A Mgabhi representative with a partner in an office lobby."
-                    width={1080}
-                    height={1080}
+                    src={IMG.boardroom}
+                    alt="A boardroom with a long table under pendant lights."
+                    width={1200}
+                    height={1600}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover object-[50%_30%]"
+                    className="aspect-[4/3] w-full object-cover object-[50%_55%]"
                   />
-                  <figcaption className="small mt-3 text-char-soft">Meeting partners in person</figcaption>
+                  <figcaption className="small mt-3 text-char-soft">Where we meet our partners</figcaption>
                 </figure>
               </div>
               <div className="col-span-12 lg:col-span-7" data-reveal style={{ ["--i" as string]: 2 }}>
@@ -546,7 +528,7 @@ export default function Home() {
             <div className="col-span-6 sm:col-span-4 lg:col-span-2">
               <h3 className="small text-ink-soft">Operations</h3>
               <ul className="mt-4 space-y-2">
-                {["Mpumalanga Hub", "Middelburg Logistics", "Rustenburg Operations", "Mooinooi Extraction", "Gauteng Midrand"].map((o) => (
+                {["Mpumalanga Hub", "Middelburg Logistics", "Rustenburg Operations", "Mooinooi Extraction", "Burgersfort Mining", "Gauteng Midrand"].map((o) => (
                   <li key={o} className="py-[0.6rem] leading-none">
                     {o}
                   </li>
@@ -569,14 +551,9 @@ export default function Home() {
             </address>
           </div>
 
-          <div className="mt-[clamp(4rem,7vw,7rem)] flex flex-wrap items-center justify-between gap-x-10 gap-y-6">
-            <div className="flex items-center gap-4">
-              <Seal ring="B-BBEE LEVEL 1 · CONTRIBUTOR · " centre={["Level", "1"]} size={96} />
-              <Seal ring="SAFETY FIRST POLICY · ON EVERY SITE · " centre={["Safety", "first"]} size={96} delay={400} />
-            </div>
-            <p className="small text-ink-soft">
-              © 2026 Mgabhi and Famaly Construction Pty Ltd. All Rights Reserved. B-BBEE Level 1 · Safety First Policy.
-            </p>
+          <div className="mt-[clamp(4rem,7vw,7rem)] flex flex-wrap items-center justify-between gap-x-10 gap-y-3">
+            <p className="small font-medium">B-BBEE Level 1 · Safety First Policy</p>
+            <p className="small text-ink-soft">© 2026 Mgabhi and Famaly Construction Pty Ltd. All Rights Reserved.</p>
           </div>
         </div>
 

@@ -7,7 +7,9 @@ type Region = {
   id: string;
   place: string;
   province: string;
-  focus: string;
+  tag: string;
+  tagClass: string;
+  desc: string;
   pin?: [number, number];
   pinLabel?: string;
   labelAnchor?: "start" | "end";
@@ -15,12 +17,34 @@ type Region = {
 };
 
 const regions: Region[] = [
-  { id: "mpumalanga", place: "Mpumalanga", province: "Mpumalanga", focus: "Hub, coal heartland", highlight: "Mpumalanga" },
+  {
+    id: "gauteng",
+    place: "Gauteng — Midrand",
+    province: "Gauteng",
+    tag: "HQ",
+    tagClass: "tag-hq",
+    desc: "Corporate headquarters and commercial operations.",
+    pin: za.towns.Midrand as [number, number],
+    pinLabel: "Midrand",
+    labelAnchor: "start",
+    highlight: "Gauteng",
+  },
+  {
+    id: "mpumalanga",
+    place: "Mpumalanga",
+    province: "Mpumalanga",
+    tag: "Logistics",
+    tagClass: "tag-logistics",
+    desc: "Coal heartland — primary export aggregation hub.",
+    highlight: "Mpumalanga",
+  },
   {
     id: "middelburg",
     place: "Middelburg",
     province: "Mpumalanga",
-    focus: "Logistics",
+    tag: "Beneficiation",
+    tagClass: "tag-beneficiation",
+    desc: "Strategic logistics & coal beneficiation node.",
     pin: za.towns.Middelburg as [number, number],
     pinLabel: "Middelburg",
     labelAnchor: "start",
@@ -30,7 +54,9 @@ const regions: Region[] = [
     id: "rustenburg",
     place: "Rustenburg",
     province: "North West",
-    focus: "Operations, chrome belt",
+    tag: "Mining",
+    tagClass: "tag-mining",
+    desc: "Platinum & chrome region operations.",
     pin: za.towns.Rustenburg as [number, number],
     pinLabel: "Rustenburg",
     labelAnchor: "end",
@@ -40,33 +66,37 @@ const regions: Region[] = [
     id: "mooinooi",
     place: "Mooinooi",
     province: "North West",
-    focus: "Extraction, chrome belt",
+    tag: "Mining",
+    tagClass: "tag-mining",
+    desc: "Active chrome mining operations.",
     pin: za.towns.Mooinooi as [number, number],
     pinLabel: "Mooinooi",
     labelAnchor: "start",
     highlight: "North West",
   },
   {
-    id: "gauteng",
-    place: "Gauteng",
-    province: "Gauteng",
-    focus: "Midrand, head office",
-    pin: za.towns.Midrand as [number, number],
-    pinLabel: "Midrand",
-    labelAnchor: "start",
-    highlight: "Gauteng",
+    id: "burgersfort",
+    place: "Burgersfort — Limpopo",
+    province: "Limpopo",
+    tag: "Mining",
+    tagClass: "tag-mining",
+    desc: "Chrome ROM (Run-of-Mine) production on the Eastern Limb of the Bushveld Complex.",
+    pin: za.towns.Burgersfort as [number, number],
+    pinLabel: "Burgersfort",
+    labelAnchor: "end",
+    highlight: "Limpopo",
   },
 ];
 
 const provinceLabels: Array<[string, number, number]> = [
-  ["Limpopo", 2230, 615],
+  ["Limpopo", 2150, 600],
   ["North West", 1850, 905],
   ["Gauteng", 2085, 925],
-  ["Mpumalanga", 2440, 905],
+  ["Mpumalanga", 2380, 880],
   ["Free State", 1960, 1005],
 ];
 
-const regionProvinces = new Set(["Mpumalanga", "North West", "Gauteng"]);
+const regionProvinces = new Set(["Mpumalanga", "North West", "Gauteng", "Limpopo"]);
 const provinces = za.provinces as Record<string, string>;
 
 export default function OperationsMap() {
@@ -75,13 +105,13 @@ export default function OperationsMap() {
 
   return (
     <div className="grid12 gap-y-12">
-      <figure className="col-span-12 m-0 lg:col-span-7 lg:row-start-1" data-reveal style={{ ["--i" as string]: 1 }}>
+      <figure className="col-span-12 m-0 lg:sticky lg:top-28 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:self-start" data-reveal style={{ ["--i" as string]: 1 }}>
         <div className="relative bg-paper-2">
           <svg
-            viewBox="1760 545 860 470"
+            viewBox="1760 470 880 545"
             className="block h-auto w-full"
             role="img"
-            aria-label={`Map of the operating corridor across North West, Gauteng and Mpumalanga. Selected: ${on.place}, ${on.province}.`}
+            aria-label={`Map of the operating corridor across North West, Gauteng, Mpumalanga and Limpopo. Selected: ${on.place}, ${on.province}.`}
           >
             {Object.entries(provinces).map(([name, d]) => (
               <path
@@ -136,7 +166,7 @@ export default function OperationsMap() {
           {/* Locator: where the corridor sits in South Africa */}
           <svg
             viewBox="0 0 3000 2660"
-            className="absolute right-3 top-3 h-auto w-[18%] min-w-[64px] max-w-[150px]"
+            className="absolute bottom-3 right-3 h-auto w-[18%] min-w-[64px] max-w-[150px]"
             aria-hidden="true"
           >
             {Object.entries(provinces).map(([name, d]) => (
@@ -145,36 +175,31 @@ export default function OperationsMap() {
           </svg>
         </div>
         <figcaption className="small mt-3 text-ink-soft">
-          Province boundaries: Natural Earth (public domain). Tap a place or a row to see it on the map.
+          Province boundaries: Natural Earth (public domain). Select a region to see it on the map.
         </figcaption>
       </figure>
 
-      <div className="col-span-12 lg:col-span-5 lg:col-start-8 lg:row-start-1" data-reveal style={{ ["--i" as string]: 2 }}>
-        <table className="particulars">
-          <caption className="sr-only">Operating regions</caption>
-          <thead className="sr-only">
-            <tr>
-              <th scope="col">Region</th>
-              <th scope="col">Province and focus</th>
-            </tr>
-          </thead>
-          <tbody>
-            {regions.map((r) => (
-              <tr key={r.id} className={`loc-row${r.id === active ? " is-on" : ""}`} onClick={() => setActive(r.id)}>
-                <th scope="row" className="!pl-3">
-                  <button type="button" aria-pressed={r.id === active} onClick={() => setActive(r.id)}>
-                    <span className="block text-[1.5rem] font-medium leading-tight tracking-[-0.02em] text-current">{r.place}</span>
-                  </button>
-                </th>
-                <td className="!pr-3">
-                  <span className="block">{r.focus}</span>
-                  <span className="small block opacity-80">{r.province}</span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <ol className="col-span-12 space-y-1 lg:col-span-6 lg:col-start-1 lg:row-start-1" data-reveal style={{ ["--i" as string]: 2 }}>
+        {regions.map((r, i) => (
+          <li key={r.id}>
+            <button
+              type="button"
+              className={`region${r.id === active ? " is-on" : ""}`}
+              aria-pressed={r.id === active}
+              onClick={() => setActive(r.id)}
+            >
+              <span className="region__num" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span>
+                <span className="region__title">{r.place}</span>
+                <span className={`region__tag ${r.tagClass}`}>· {r.tag}</span>
+                <span className="region__desc block">{r.desc}</span>
+              </span>
+            </button>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }

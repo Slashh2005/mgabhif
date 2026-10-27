@@ -77,9 +77,9 @@ components:
 ## Overview
 
 **The assay certificate.** Every claim the company makes is set the way a commodity certificate sets
-it: a ruled particulars table, issued and stamped by the issuer. White certificate paper, charcoal
+it: a ruled particulars table. White certificate paper, charcoal
 ink, and navy issuer ink, all taken from the Mgabhi logo (the tunnel-and-cart mark). Big medium-weight
-grotesk statements carry the page; tables, seals and the company's own site photographs carry the proof.
+grotesk statements carry the page; tables and the company's own site photographs carry the proof. The hero is a split screen: a navy field with the headline beside a full-height site photograph.
 
 ## Colors
 
@@ -87,8 +87,8 @@ grotesk statements carry the page; tables, seals and the company's own site phot
   and image placeholders; surfaces are separated by tone, never by lines or shadows.
 - **Ink** (`#2a2b2b`, the logo's charcoal) for all running text, at full strength. **Ink-soft** only for
   secondary lines and table keys.
-- **Navy** (`#0c3054`, sampled from the logo wordmark) is the issuer's ink: the primary action, the
-  seals, the selected state, the figures in the experience sentence. It also owns one whole field
+- **Navy** (`#0c3054`, sampled from the logo wordmark) is the issuer's ink: the hero field, the primary action, the
+  selected state, the figures in the experience sentence. It also owns one whole field
   (references).
 - **Char** (`#262727`) owns the closing field (contact). On dark fields, text is white with
   **navy-soft** / **char-soft** for secondary lines.
@@ -100,7 +100,7 @@ grotesk statements carry the page; tables, seals and the company's own site phot
 One family, Hanken Grotesk, at weights 400 and 500, with tabular lining figures everywhere. Five steps
 only: display (hero and the inspection halves), headline (section titles, two lines maximum),
 statement (large paragraphs, three or four lines, 32px maximum), body, and label. No bold, no italic,
-no capitals except inside the seal rings.
+capitals only in the small region tags.
 
 ## Layout
 
@@ -115,27 +115,28 @@ genuinely floats.
 
 ## Shapes
 
-Square corners everywhere: buttons, chips, photographs, the slip. The one round form is the seal.
+Square corners everywhere: buttons, chips, photographs, the slip.
 
 ## Components
 
 - **Particulars table**: real `<table>`, 2px ink rule on top, 1px `rule` lines between rows; keys in
   ink-soft at 40% width, values in ink at weight 500. On dark fields the rules turn translucent white.
-- **Seal**: round navy stamp (SVG), words on the ring, two short words in the centre. Stamps down once
-  (scale 1.7 to 1 with a small rotation) when it scrolls into view.
 - **Buttons**: navy fill, white text, square; hover darkens, press scales to 0.97, trailing arrow
   nudges 4px.
 - **Chips**: radio inputs styled as square tone blocks; selected chips turn navy.
 - **Enquiry slip**: white form on the charcoal field with a reference number; fields are underlined,
   not boxed. Submitting composes a `mailto:` with every choice filled in.
+- **Region list**: numbered rows (01–06) with a title, a coloured tag (HQ amber `#b7791f`, Logistics green
+  `#2f7d5b`, Beneficiation rose `#c2416a`, Mining navy) and a one-line description; a 3px left edge, navy and
+  a lavender `#c9d1e2` fill on the selected row. Requested by the client from a reference screenshot.
 - **Operations map**: Natural Earth province outlines, three operating provinces in a darker tone, the
-  selected one in navy-soft; pins pulse when selected and stay in sync with the region table.
+  selected one in navy-soft; pins pulse when selected and stay in sync with the region list.
 
 ## Do's and Don'ts
 
-- Do put every factual claim in a particulars table or a seal.
+- Do put every factual claim in a particulars table.
 - Do use the company's own photographs, square-cropped, with a plain caption saying what is shown.
-- Don't add eyebrows or labels above headings, icon cards, gradients, glass, or shadows at rest.
+- Don't add stamps or badges, eyebrows above headings, icon cards, gradients, glass, or shadows at rest.
 - Don't spell the company "Family": it is **Famaly**, as on the logo.
 - Don't invent figures, clients or quotes. The only stats are 10+ years industry experience, 100%
-  safety compliance, 5 regions and 4 verticals.
+  safety compliance, 6 regions and 4 verticals.

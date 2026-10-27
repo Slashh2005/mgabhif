@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Seal from "./Seal";
 
 const needs = ["Plant hire", "Commodity export", "Petroleum supply", "Mining services"] as const;
 const regions = ["Mpumalanga", "Middelburg", "Rustenburg", "Mooinooi", "Gauteng", "Outside South Africa"] as const;
@@ -188,12 +187,6 @@ export default function EnquirySlip() {
           )}
         </p>
       </div>
-
-      {sent && (
-        <div className="pointer-events-none absolute right-6 top-20 sm:right-10">
-          <Seal ring="ENQUIRY SLIP · MGABHI & FAMALY · " centre={["Ready", "to send"]} size={120} stamp={false} className="seal--now" />
-        </div>
-      )}
     </form>
   );
 }
