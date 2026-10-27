@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T10:00:00Z",
+  "title": "Design System: Mgabhi & Famaly Construction",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Certificate Paper", "canonical": "#ffffff", "tonalRamp": ["#ffffff", "#f2f3f3", "#e4e6e7", "#cfd3d5"] },
+      "ink": { "role": "neutral", "displayName": "Logo Charcoal", "canonical": "#2a2b2b", "tonalRamp": ["#565a5b", "#2a2b2b", "#262727"] },
+      "navy": { "role": "primary", "displayName": "Issuer Navy", "canonical": "#0c3054", "tonalRamp": ["#b9c6d6", "#0c3054", "#0a2744"] },
+      "error": { "role": "error", "displayName": "Validation Red", "canonical": "#a1261d", "tonalRamp": ["#a1261d"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero headline and the two halves of the inspection sentence. Two lines maximum." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles and the partner names list. Two lines maximum." },
+      "statement": { "displayName": "Statement", "purpose": "Large paragraphs, quotes and row titles; 32px maximum, about three lines." },
+      "body": { "displayName": "Body", "purpose": "Running text, table values, buttons. Tabular lining figures." },
+      "label": { "displayName": "Label", "purpose": "Captions, table keys on small screens, the legal line." }
+    },
+    "shadows": [
+      { "name": "menu", "value": "0 18px 40px -12px rgb(12 48 84 / 0.28)", "purpose": "Only the mobile menu panel, which floats over the page." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Entrances, hovers, the stamp." },
+      { "name": "ease-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Headline line rises, reveals, rolling figures." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.76, 0, 0.24, 1)", "purpose": "The hero photo opening and the inspection zoom." },
+      { "name": "ease-soft", "value": "cubic-bezier(0.33, 1, 0.68, 1)", "purpose": "Slow drift on photographs." },
+      { "name": "stamp", "value": "620ms: scale 1.7 → 0.94 → 1, rotate -24° → -9°", "purpose": "The seal stamps once as its section enters." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action per screen: navy, square, with an arrow that nudges on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Request Partnership <span class=\"ds-arrow\">→</span></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6em; min-height: 3.25rem; padding: 0.8rem 1.5rem; font: 500 1.125rem/1.1 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; background: #0c3054; color: #fff; border-radius: 0; transition: background-color 180ms cubic-bezier(0.22,1,0.36,1), transform 140ms cubic-bezier(0.22,1,0.36,1); } .ds-btn:hover { background: #0a2744; } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 3px solid #0c3054; outline-offset: 3px; } .ds-arrow { transition: transform 240ms cubic-bezier(0.22,1,0.36,1); } .ds-btn:hover .ds-arrow { transform: translateX(4px); }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary action next to a primary one (footer, mobile menu toggle).",
+      "html": "<a class=\"ds-btn-quiet\" href=\"#\">Operations</a>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.55rem 1.1rem; font: 500 0.9375rem/1.1 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; background: #f2f3f3; color: #2a2b2b; border-radius: 0; transition: background-color 180ms; } .ds-btn-quiet:hover { background: #e4e6e7; } .ds-btn-quiet:focus-visible { outline: 3px solid #0c3054; outline-offset: 3px; }"
+    },
+    {
+      "name": "Particulars Table",
+      "kind": "custom",
+      "description": "The certificate's core device: every factual claim in a ruled key/value table.",
+      "html": "<table class=\"ds-part\"><tbody><tr><th>Established</th><td>2022, South Africa</td></tr><tr><th>Head office</th><td>Waterfall, Midrand</td></tr><tr><th>Safety</th><td>Compliant</td></tr></tbody></table>",
+      "css": ".ds-part { width: 100%; border-collapse: collapse; font: 400 1.125rem/1.5 'Hanken Grotesk', system-ui, sans-serif; color: #2a2b2b; font-variant-numeric: tabular-nums; } .ds-part th, .ds-part td { text-align: left; padding: 0.7rem 0; border-bottom: 1px solid #cfd3d5; } .ds-part tr:first-child th, .ds-part tr:first-child td { border-top: 2px solid #2a2b2b; } .ds-part th { font-weight: 400; color: #565a5b; width: 40%; padding-right: 1rem; } .ds-part td { font-weight: 500; }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Single-choice options in the enquiry slip; selected turns navy.",
+      "html": "<span class=\"ds-chip\">Plant hire</span> <span class=\"ds-chip ds-chip-on\">Commodity export</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.45rem 0.95rem; font: 400 1.125rem/1.2 'Hanken Grotesk', system-ui, sans-serif; background: #f2f3f3; color: #2a2b2b; cursor: pointer; transition: background-color 180ms, color 180ms; } .ds-chip:hover { background: #e4e6e7; } .ds-chip-on, .ds-chip-on:hover { background: #0c3054; color: #fff; }"
+    },
+    {
+      "name": "Underlined Field",
+      "kind": "input",
+      "description": "Slip fields are written on a line, not boxed; focus turns the line navy and tints the field.",
+      "html": "<label class=\"ds-label\">Your name<input class=\"ds-field\" /></label>",
+      "css": ".ds-label { display: block; font: 500 1.125rem/1.5 'Hanken Grotesk', system-ui, sans-serif; color: #2a2b2b; } .ds-field { display: block; width: 100%; background: transparent; border: 0; border-bottom: 2px solid #2a2b2b; border-radius: 0; padding: 0.55rem 0 0.5rem; font: inherit; font-weight: 400; color: inherit; } .ds-field:hover { border-bottom-color: #0c3054; } .ds-field:focus-visible { outline: none; border-bottom-color: #0c3054; background: #f2f3f3; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Plain bar: mark and two-line wordmark, five links with a growing underline, one navy action.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-word\"><b>Mgabhi &amp; Famaly</b><br>Construction Pty Ltd</span><a class=\"ds-link\" href=\"#\">About</a><a class=\"ds-link\" href=\"#\">Services</a><a class=\"ds-link\" href=\"#\">Operations</a><a class=\"ds-cta\" href=\"#\">Partnership</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; font: 400 1.125rem/1.2 'Hanken Grotesk', system-ui, sans-serif; color: #2a2b2b; background: #fff; padding: 1rem 2rem; } .ds-word { font-size: 0.9375rem; line-height: 1.15; color: #565a5b; margin-right: auto; } .ds-word b { font-weight: 500; color: #2a2b2b; } .ds-link { position: relative; text-decoration: none; color: inherit; padding: 0.6rem 0; } .ds-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0.35rem; height: 2px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 240ms cubic-bezier(0.22,1,0.36,1); } .ds-link:hover { color: #0c3054; } .ds-link:hover::after { transform: scaleX(1); } .ds-cta { background: #0c3054; color: #fff; text-decoration: none; padding: 0.55rem 1.1rem; font-size: 0.9375rem; font-weight: 500; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Assay Certificate",
+    "overview": "The site is issued like a commodity certificate. Claims sit in ruled particulars tables, stamped by a navy seal; the company's own site photographs are the proof. Colours come straight from the Mgabhi logo: white paper, charcoal ink, navy issuer ink.",
+    "keyCharacteristics": [
+      "White paper ground with tone-step sections; navy and charcoal full-bleed fields for references and contact",
+      "One family, Hanken Grotesk 400/500, five sizes, tabular figures",
+      "Real ruled tables are the only lines on the page",
+      "Square corners everywhere except the round seal",
+      "Motion: headline lines rise, sections reveal once, seals stamp, figures roll, one pinned inspection zoom"
+    ],
+    "rules": [
+      { "name": "Certify, don't claim", "body": "Every factual claim lives in a particulars table or a seal, never in a floating badge or a stat tile.", "section": "colors" },
+      { "name": "Issuer ink", "body": "Navy marks the issuer: the action, the seal, the selected state, and the certified figures. Nothing else.", "section": "colors" },
+      { "name": "Two lines", "body": "Every headline holds two lines at every width; longer copy becomes a statement paragraph.", "section": "typography" }
+    ],
+    "dos": [
+      "Do use the company's own photographs, square-cropped, captioned plainly",
+      "Do spell the name Mgabhi & Famaly Construction Pty Ltd",
+      "Do keep the stats to the confirmed four: 10+ years industry experience, 100% safety compliance, 5 regions, 4 verticals"
+    ],
+    "donts": [
+      "Don't add eyebrows above headings, icon cards, gradients, glass or resting shadows",
+      "Don't invent clients, tonnages, grades or quotes",
+      "Don't use official partner logos without approved files"
+    ]
+  }
+}
