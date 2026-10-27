@@ -25,8 +25,8 @@ qualified visitor starting a partnership conversation (phone, email or enquiry).
 ## Positioning
 
 A South African, family-founded company working across four verticals at once — plant hire,
-commodity export (coal, chrome, copper), petroleum / diesel supply and mining services — in five
-named regions: Mpumalanga, Middelburg, Rustenburg, Mooinooi, Gauteng.
+commodity export (coal, chrome, copper), petroleum / diesel supply and mining services — in six
+named regions: Mpumalanga, Middelburg, Rustenburg, Mooinooi, Gauteng, Burgersfort (Limpopo).
 
 ## Operating Context
 
@@ -44,8 +44,10 @@ site engineers in hi-vis. Head office: 22 Magwa Crescent, Waterfall, Midrand, Ga
 
 ## Evidence on Hand
 
+- Founder: Melvin (confirmed by the user); photos `founder-chair.jpg`, `founder-boardroom.jpg`.
+
 - Stats confirmed by the user: 10+ Years Industry Experience, 100% Safety Compliance,
-  5 Operating Regions, 4 Commodity Verticals.
+  6 Operating Regions, 4 Commodity Verticals.
 - Partners confirmed by the user: Exxaro, Black Wattle, Mooinooi, Mining Indaba, Mpumalanga DMR
   (shown as text names only; no official logo files supplied).
 - Two attributed-by-role testimonials in `mgabhi_website_copy.md`.

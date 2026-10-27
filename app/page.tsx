@@ -73,7 +73,7 @@ const verticals = [
     need: "Mining services",
     text: "Operations, exploration, extraction and consultancy, from the first survey to a working pit.",
     supplied: "Operations, exploration, extraction, consultancy",
-    for: "Mine owners and operators across our five regions",
+    for: "Mine owners and operators across our six regions",
     img: IMG.plantSite,
     alt: "A processing site with spiral concentrators, a pump and a dewatering screen among eucalyptus trees.",
     caption: "Processing plant on site",
@@ -201,7 +201,7 @@ export default function Home() {
               <div className="overflow-hidden bg-paper-3">
                 <img
                   src={IMG.founderChair}
-                  alt="The founder of Mgabhi & Famaly Construction on a phone call, seated in a blue armchair in an office lobby."
+                  alt="Melvin, founder of Mgabhi & Famaly Construction, on a phone call in a blue armchair in an office lobby."
                   width={1200}
                   height={1600}
                   loading="lazy"
@@ -215,23 +215,23 @@ export default function Home() {
                 Meet our founder
               </h2>
               <p className="statement mt-8" data-reveal style={{ ["--i" as string]: 1 }}>
-                Mgabhi &amp; Famaly Construction was founded in 2022 and is still led by its founder, from our head
-                office in Midrand.
+                Mgabhi &amp; Famaly Construction was founded in 2022 by Melvin, who still leads the company from our
+                head office in Midrand.
               </p>
               <p className="mt-6 max-w-[46ch] text-ink-soft" data-reveal style={{ ["--i" as string]: 2 }}>
-                Partners deal directly with the person who runs the company: the calls, the site visits and the
+                Partners deal directly with Melvin: the calls, the site visits and the
                 negotiations at the table.
               </p>
               <figure className="m-0 mt-10 grid grid-cols-[minmax(0,9rem)_1fr] items-end gap-5" data-reveal style={{ ["--i" as string]: 3 }}>
                 <img
                   src={IMG.founderBoardroom}
-                  alt="The founder standing at the head of a long boardroom table."
+                  alt="Melvin standing at the head of a long boardroom table."
                   width={1200}
                   height={1600}
                   loading="lazy"
                   className="aspect-[3/4] w-full object-cover object-[55%_30%]"
                 />
-                <figcaption className="small text-ink-soft">Our founder in the boardroom.</figcaption>
+                <figcaption className="small text-ink-soft">Melvin in the boardroom.</figcaption>
               </figure>
             </div>
           </div>
@@ -259,7 +259,7 @@ export default function Home() {
                 across{" "}
                 <span className="font-medium text-navy">
                   <span className="whitespace-nowrap">
-                    <span data-roll>5</span>&nbsp;operating
+                    <span data-roll>6</span>&nbsp;operating
                   </span>{" "}
                   regions
                 </span>
@@ -370,7 +370,7 @@ export default function Home() {
           <div className="wrap">
             <div className="grid12 gap-y-8">
               <h2 id="operations-title" className="head col-span-12 lg:col-span-10" data-reveal>
-                Strategic operations across five key regions
+                Strategic operations across six key regions
               </h2>
               <p className="statement col-span-12 max-w-[40ch] text-ink-soft lg:col-span-7" data-reveal style={{ ["--i" as string]: 1 }}>
                 From the chrome belt of the North West to the coal heartland of Mpumalanga, our operations span
@@ -528,7 +528,7 @@ export default function Home() {
             <div className="col-span-6 sm:col-span-4 lg:col-span-2">
               <h3 className="small text-ink-soft">Operations</h3>
               <ul className="mt-4 space-y-2">
-                {["Mpumalanga Hub", "Middelburg Logistics", "Rustenburg Operations", "Mooinooi Extraction", "Gauteng Midrand"].map((o) => (
+                {["Mpumalanga Hub", "Middelburg Logistics", "Rustenburg Operations", "Mooinooi Extraction", "Burgersfort Mining", "Gauteng Midrand"].map((o) => (
                   <li key={o} className="py-[0.6rem] leading-none">
                     {o}
                   </li>

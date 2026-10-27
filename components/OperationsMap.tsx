@@ -74,17 +74,29 @@ const regions: Region[] = [
     labelAnchor: "start",
     highlight: "North West",
   },
+  {
+    id: "burgersfort",
+    place: "Burgersfort — Limpopo",
+    province: "Limpopo",
+    tag: "Mining",
+    tagClass: "tag-mining",
+    desc: "Chrome ROM (Run-of-Mine) production on the Eastern Limb of the Bushveld Complex.",
+    pin: za.towns.Burgersfort as [number, number],
+    pinLabel: "Burgersfort",
+    labelAnchor: "end",
+    highlight: "Limpopo",
+  },
 ];
 
 const provinceLabels: Array<[string, number, number]> = [
-  ["Limpopo", 2230, 615],
+  ["Limpopo", 2150, 600],
   ["North West", 1850, 905],
   ["Gauteng", 2085, 925],
-  ["Mpumalanga", 2440, 905],
+  ["Mpumalanga", 2380, 880],
   ["Free State", 1960, 1005],
 ];
 
-const regionProvinces = new Set(["Mpumalanga", "North West", "Gauteng"]);
+const regionProvinces = new Set(["Mpumalanga", "North West", "Gauteng", "Limpopo"]);
 const provinces = za.provinces as Record<string, string>;
 
 export default function OperationsMap() {
@@ -96,10 +108,10 @@ export default function OperationsMap() {
       <figure className="col-span-12 m-0 lg:sticky lg:top-28 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:self-start" data-reveal style={{ ["--i" as string]: 1 }}>
         <div className="relative bg-paper-2">
           <svg
-            viewBox="1760 545 860 470"
+            viewBox="1760 470 880 545"
             className="block h-auto w-full"
             role="img"
-            aria-label={`Map of the operating corridor across North West, Gauteng and Mpumalanga. Selected: ${on.place}, ${on.province}.`}
+            aria-label={`Map of the operating corridor across North West, Gauteng, Mpumalanga and Limpopo. Selected: ${on.place}, ${on.province}.`}
           >
             {Object.entries(provinces).map(([name, d]) => (
               <path
@@ -154,7 +166,7 @@ export default function OperationsMap() {
           {/* Locator: where the corridor sits in South Africa */}
           <svg
             viewBox="0 0 3000 2660"
-            className="absolute right-3 top-3 h-auto w-[18%] min-w-[64px] max-w-[150px]"
+            className="absolute bottom-3 right-3 h-auto w-[18%] min-w-[64px] max-w-[150px]"
             aria-hidden="true"
           >
             {Object.entries(provinces).map(([name, d]) => (

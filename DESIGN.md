@@ -126,7 +126,7 @@ Square corners everywhere: buttons, chips, photographs, the slip.
 - **Chips**: radio inputs styled as square tone blocks; selected chips turn navy.
 - **Enquiry slip**: white form on the charcoal field with a reference number; fields are underlined,
   not boxed. Submitting composes a `mailto:` with every choice filled in.
-- **Region list**: numbered rows (01–05) with a title, a coloured tag (HQ amber `#b7791f`, Logistics green
+- **Region list**: numbered rows (01–06) with a title, a coloured tag (HQ amber `#b7791f`, Logistics green
   `#2f7d5b`, Beneficiation rose `#c2416a`, Mining navy) and a one-line description; a 3px left edge, navy and
   a lavender `#c9d1e2` fill on the selected row. Requested by the client from a reference screenshot.
 - **Operations map**: Natural Earth province outlines, three operating provinces in a darker tone, the
@@ -139,4 +139,4 @@ Square corners everywhere: buttons, chips, photographs, the slip.
 - Don't add stamps or badges, eyebrows above headings, icon cards, gradients, glass, or shadows at rest.
 - Don't spell the company "Family": it is **Famaly**, as on the logo.
 - Don't invent figures, clients or quotes. The only stats are 10+ years industry experience, 100%
-  safety compliance, 5 regions and 4 verticals.
+  safety compliance, 6 regions and 4 verticals.
