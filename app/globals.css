@@ -248,24 +248,6 @@ a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1p
 @keyframes load-open { to { clip-path: inset(0); } }
 @keyframes drift { from { transform: scale(1.02); } to { transform: scale(1.12) translate(-1.5%, 1%); } }
 
-/* The seal: stamps down once as its section arrives. */
-.seal { display: block; color: var(--color-navy); transform: rotate(-9deg); }
-.on-dark .seal { color: #fff; }
-@media (prefers-reduced-motion: no-preference) {
-  .js .seal[data-stamp] { opacity: 0; transform: scale(1.7) rotate(-24deg); }
-  .js .seal[data-stamp].is-in {
-    animation: stamp 620ms var(--ease-out) forwards;
-    animation-delay: var(--d, 250ms);
-  }
-}
-.seal--now { animation: stamp 620ms var(--ease-out) both; }
-@media (prefers-reduced-motion: reduce) { .seal--now { animation: none; } }
-@keyframes stamp {
-  0% { opacity: 0; transform: scale(1.7) rotate(-24deg); }
-  55% { opacity: 0.95; transform: scale(0.94) rotate(-8deg); }
-  100% { opacity: 0.95; transform: scale(1) rotate(-9deg); }
-}
-
 /* Rolling figures */
 .roll__digits { display: inline-flex; font-variant-numeric: tabular-nums; line-height: 1; vertical-align: baseline; }
 .roll__col { display: inline-block; height: 1em; overflow: clip; }
@@ -274,35 +256,6 @@ a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1p
 @media (prefers-reduced-motion: no-preference) {
   .roll:not(.is-in) .roll__strip { transform: none; }
   .roll.is-in .roll__strip { transition: transform 1200ms var(--ease-expo) calc(var(--i) * 90ms); }
-}
-
-/* ------------------------------------------------------------------
-   Inspection showcase: one frame, three distances.
-   ------------------------------------------------------------------ */
-.inspect { position: relative; height: 240vh; }
-.inspect__stage {
-  position: sticky; top: 0; height: 100svh;
-  display: grid; place-items: center; overflow: clip;
-}
-.inspect__frame { overflow: hidden; background: var(--color-paper-3); }
-.inspect__frame img {
-  width: 100%; height: 100%; object-fit: cover;
-  transform-origin: var(--ox, 50%) var(--oy, 50%);
-  transform: scale(var(--s, 1));
-  transition: transform 900ms var(--ease-in-out), transform-origin 900ms var(--ease-in-out);
-}
-.inspect__note {
-  transition: opacity 500ms var(--ease-out), transform 600ms var(--ease-out);
-}
-.inspect__note:not(.is-on) { opacity: 0; transform: translateY(10px); }
-.inspect__stage[data-stage="1"] { --s: 1; }
-.inspect__stage[data-stage="2"] { --s: 1.75; --ox: 52%; --oy: 18%; }
-.inspect__stage[data-stage="3"] { --s: 1.9; --ox: 25%; --oy: 82%; }
-@media (prefers-reduced-motion: reduce) {
-  .inspect { height: auto; }
-  .inspect__stage { position: static; height: auto; padding-block: var(--section); }
-  .inspect__frame img { transform: none; transition: none; }
-  .inspect__note:not(.is-on) { opacity: 1; transform: none; }
 }
 
 /* ------------------------------------------------------------------
@@ -328,13 +281,27 @@ a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1p
   .map-pin circle.core { r: 13px; }
 }
 
-.loc-row { cursor: pointer; transition: background-color var(--t-hover) var(--ease-out), color var(--t-hover) var(--ease-out); }
-.loc-row:hover { background: var(--color-paper-2); }
-.loc-row th { color: var(--color-ink); }
-.loc-row.is-on { background: var(--color-navy); color: #fff; }
-.loc-row.is-on th { color: #fff; }
-.loc-row button { all: unset; cursor: pointer; display: block; width: 100%; }
-.loc-row button:focus-visible { outline: 3px solid var(--color-navy); outline-offset: 4px; }
+/* Region list: numbered rows, a tag, the selected row highlighted. */
+.region {
+  display: grid; grid-template-columns: 2.5rem 1fr; gap: 0 0.75rem;
+  width: 100%; text-align: left; cursor: pointer;
+  padding: 1.35rem 1.5rem 1.35rem 1.25rem;
+  background: transparent; color: var(--color-ink);
+  border: 0; border-left: 3px solid var(--color-paper-3);
+  font: inherit;
+  transition: background-color var(--t-ui) var(--ease-out), border-color var(--t-ui) var(--ease-out);
+}
+.region:hover { background: var(--color-paper-2); }
+.region.is-on { background: #c9d1e2; border-left-color: var(--color-navy); }
+.region__num { font-size: var(--text-small); color: #8a8e90; letter-spacing: 0.12em; padding-top: 0.35rem; font-variant-numeric: tabular-nums; }
+.region__title { font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); font-weight: 500; letter-spacing: -0.02em; }
+.region__tag { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; margin-left: 0.6rem; white-space: nowrap; vertical-align: 0.2em; }
+.region__desc { color: var(--color-ink-soft); margin-top: 0.4rem; }
+.region.is-on .region__desc { color: #3e4552; }
+.tag-hq { color: #b7791f; }
+.tag-logistics { color: #2f7d5b; }
+.tag-beneficiation { color: #c2416a; }
+.tag-mining { color: var(--color-navy); }
 
 /* ------------------------------------------------------------------
    Partner names: one sentence, one name lit at a time.
@@ -380,6 +347,14 @@ a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1p
 /* ------------------------------------------------------------------
    Footer name, cropped by the bottom edge.
    ------------------------------------------------------------------ */
+.hero-title {
+  font-size: clamp(2rem, 0.2rem + 5.2vw, 5.75rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+.hero-tag { border-top: 1px solid rgb(255 255 255 / 0.28); padding-top: 0.9rem; }
+
 .bigname {
   font-size: clamp(7rem, 27vw, 30rem);
   font-weight: 500;

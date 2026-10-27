@@ -3,8 +3,8 @@
 import { useEffect } from "react";
 
 /**
- * The page's small motion layer: reveal-once, stamping seals, rolling figures,
- * the inspection showcase and the lit partner name. Content is visible without it.
+ * The page's small motion layer: reveal-once, rolling figures
+ * and the lit partner name. Content is visible without it.
  */
 export default function Motion() {
   useEffect(() => {
@@ -36,8 +36,8 @@ export default function Motion() {
       el.replaceChildren(said, shown);
     });
 
-    // Reveal once: section parts, seals and figures.
-    const targets = document.querySelectorAll<HTMLElement>("[data-reveal], [data-stamp], [data-roll]");
+    // Reveal once: section parts and figures.
+    const targets = document.querySelectorAll<HTMLElement>("[data-reveal], [data-roll]");
     if (!("IntersectionObserver" in window)) {
       targets.forEach((el) => el.classList.add("is-in"));
     } else {
@@ -62,28 +62,6 @@ export default function Motion() {
       }, 2500);
       cleanups.push(() => clearTimeout(t));
     }
-
-    // Inspection showcase: three markers switch the stage between distances.
-    document.querySelectorAll<HTMLElement>("[data-inspect]").forEach((root) => {
-      const stage = root.querySelector<HTMLElement>(".inspect__stage");
-      const markers = root.querySelectorAll<HTMLElement>("[data-marker]");
-      if (!stage || reduced || !("IntersectionObserver" in window)) return;
-      const set = (n: string) => {
-        stage.dataset.stage = n;
-        root.querySelectorAll<HTMLElement>("[data-note]").forEach((note) => {
-          note.classList.toggle("is-on", Number(note.dataset.note) <= Number(n));
-        });
-      };
-      set("1");
-      const io = new IntersectionObserver(
-        (entries) => {
-          for (const e of entries) if (e.isIntersecting) set((e.target as HTMLElement).dataset.marker!);
-        },
-        { rootMargin: "-50% 0px -50% 0px" },
-      );
-      markers.forEach((m) => io.observe(m));
-      cleanups.push(() => io.disconnect());
-    });
 
     // Partner names: one lit at a time, paused when off screen.
     document.querySelectorAll<HTMLElement>("[data-names]").forEach((root) => {
