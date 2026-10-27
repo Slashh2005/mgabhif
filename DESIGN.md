@@ -16,32 +16,32 @@ colors:
   error: "#a1261d"
 typography:
   display:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(2.05rem, -0.2rem + 8vw, 8.25rem)"
-    fontWeight: 500
+    fontWeight: 600
     lineHeight: 0.95
     letterSpacing: "-0.045em"
   headline:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(2rem, 1rem + 3.9vw, 4.75rem)"
-    fontWeight: 500
+    fontWeight: 600
     lineHeight: 0.98
     letterSpacing: "-0.04em"
   statement:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(1.3125rem, 1rem + 1.1vw, 2rem)"
     fontWeight: 400
     lineHeight: 1.22
     letterSpacing: "-0.02em"
   body:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem)"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "-0.005em"
     fontFeature: "\"tnum\" 1, \"lnum\" 1"
   label:
-    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem)"
     fontWeight: 400
     lineHeight: 1.45
@@ -97,7 +97,7 @@ grotesk statements carry the page; tables and the company's own site photographs
 
 ## Typography
 
-One family, Hanken Grotesk, at weights 400 and 500, with tabular lining figures everywhere. Five steps
+One family, Archivo, at weights 400, 500 and 600 (headings), with tabular lining figures everywhere. Five steps
 only: display (hero and the inspection halves), headline (section titles, two lines maximum),
 statement (large paragraphs, three or four lines, 32px maximum), body, and label. No bold, no italic,
 capitals only in the small region tags.

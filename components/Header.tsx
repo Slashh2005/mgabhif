@@ -48,12 +48,15 @@ export default function Header() {
           </a>
           <button
             type="button"
-            className="btn btn--small !bg-paper-2 !text-ink"
+            className={`burger${open ? " is-open" : ""}`}
             aria-expanded={open}
             aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? "Close" : "Menu"}
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
           </button>
         </div>
       </div>

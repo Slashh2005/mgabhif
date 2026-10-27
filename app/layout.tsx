@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 
-const hanken = Hanken_Grotesk({
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-hanken",
+  weight: ["400", "500", "600"],
+  variable: "--font-archivo",
   display: "swap",
 });
 
@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-ZA" className={hanken.variable}>
+    <html lang="en-ZA" className={archivo.variable}>
       <head>
         {/* Hidden entrance states only apply when scripting works. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
