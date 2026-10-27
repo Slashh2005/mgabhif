@@ -110,8 +110,8 @@ export default function Home() {
           </figure>
           <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
 
-          <div className="hero relative grid grid-cols-[minmax(0,1fr)_40%] lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
-            <div className="flex flex-col justify-between gap-10 pb-8 pl-[var(--margin)] pr-4 pt-8 sm:gap-14 sm:pb-12 sm:pr-[var(--margin)] sm:pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
+          <div className="hero relative grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_40%] lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
+            <div className="flex flex-col justify-between gap-10 pb-8 pl-[var(--margin)] pr-[var(--margin)] pt-8 max-sm:min-h-[calc(100svh-4.75rem)] max-sm:justify-end max-sm:gap-8 sm:gap-14 sm:pr-4 sm:pb-12 sm:pr-[var(--margin)] sm:pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
               <div>
                 <h1 id="hero-title" className="hero-title lines">
                   <span className="line">
@@ -139,7 +139,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <ul className="hero-tags grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-y-6 xl:grid-cols-4" data-load style={{ ["--d" as string]: "640ms" }}>
+              <ul className="hero-tags grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-y-6 xl:grid-cols-4" data-load style={{ ["--d" as string]: "640ms" }}>
                 {[
                   ["Mining", "Experience"],
                   ["Commodity", "Export"],

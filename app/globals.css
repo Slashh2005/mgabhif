@@ -403,15 +403,24 @@ a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1p
 }
 
 
-/* Phones: text and photo stay side by side, so the text column is set smaller. */
+/* Phones: the photo fills the first screen and the navy rises from the bottom under the text. */
 @media (max-width: 639px) {
-  .hero-title { font-size: clamp(1.5rem, 6.6vw, 2rem); line-height: 1.04; text-wrap: balance; }
-  /* Let the headline wrap naturally in the narrow column instead of the two authored desktop lines. */
+  .hero-photo { width: 100%; }
+  .hero-photo img { object-position: 50% 20%; }
+  .hero-fade {
+    background: linear-gradient(
+      to top,
+      var(--color-navy) 0%,
+      var(--color-navy) 42%,
+      rgb(12 48 84 / 0.78) 54%,
+      rgb(12 48 84 / 0.38) 66%,
+      rgb(12 48 84 / 0.1) 78%,
+      rgb(12 48 84 / 0) 88%
+    ); /* taste-skill-ignore: requested fade of the panel into the photo */
+  }
+  .hero-title { font-size: clamp(1.9rem, 8.6vw, 2.4rem); line-height: 1.02; text-wrap: balance; }
   .hero-title .line, .hero-title [data-line] { display: inline; }
-  .hero-sub { font-size: 0.9375rem; line-height: 1.45; }
-  .hero-actions .btn { min-height: 2.75rem; padding: 0.55rem 0.9rem; font-size: 0.9375rem; }
-  .hero-actions .link { font-size: 0.9375rem; }
-  .hero-actions .btn .arrow { display: none; }
+  .hero-sub { font-size: 1rem; line-height: 1.5; }
   .hero-tag { font-size: 0.875rem; line-height: 1.3; padding-top: 0.6rem; }
 }
 
