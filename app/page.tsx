@@ -218,7 +218,7 @@ export default function Home() {
                 Partners deal directly with Melvin: the calls, the site visits and the
                 negotiations at the table.
               </p>
-              <figure className="m-0 mt-10 grid grid-cols-[minmax(0,10rem)_1fr] items-end gap-5" data-reveal style={{ ["--i" as string]: 3 }}>
+              <figure className="m-0 mt-10 w-40" data-reveal style={{ ["--i" as string]: 3 }}>
                 <div className="frame aspect-[4/5]">
                   <img
                     src={IMG.founderBoardroom}
@@ -229,7 +229,6 @@ export default function Home() {
                     className="photo object-[55%_30%]"
                   />
                 </div>
-                <figcaption className="small text-ink-soft">Melvin in the boardroom.</figcaption>
               </figure>
             </div>
           </div>
@@ -274,15 +273,14 @@ export default function Home() {
 
             <div className="mt-[clamp(3rem,6vw,6rem)] grid grid-cols-1 gap-[var(--gutter)] sm:grid-cols-3">
               {[
-                { src: IMG.chrome, alt: "Two workers in reflective gear bag samples from a chrome ore stockpile.", cap: "Sampling a chrome stockpile", w: 720, h: 708, pos: "50% 50%" },
-                { src: IMG.engineer, alt: "A site engineer in a hard hat and reflective vest in front of a coal stockpile.", cap: "Site engineer at a coal stockpile", w: 720, h: 808, pos: "50% 40%" },
-                { src: IMG.wash, alt: "A wash plant with its conveyor and spiral tower beside fresh stockpiles.", cap: "Wash plant on site", w: 720, h: 699, pos: "65% 50%" },
+                { src: IMG.chrome, alt: "Two workers in reflective gear bag samples from a chrome ore stockpile.", w: 720, h: 708, pos: "50% 50%" },
+                { src: IMG.engineer, alt: "A site engineer in a hard hat and reflective vest in front of a coal stockpile.", w: 720, h: 808, pos: "50% 40%" },
+                { src: IMG.wash, alt: "A wash plant with its conveyor and spiral tower beside fresh stockpiles.", w: 720, h: 699, pos: "65% 50%" },
               ].map((p, i) => (
                 <figure key={p.src} className="m-0" data-reveal style={{ ["--i" as string]: i }}>
                   <div className="frame aspect-[4/5]">
                     <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" className="photo" style={{ objectPosition: p.pos }} />
                   </div>
-                  <figcaption className="small mt-3 text-ink-soft">{p.cap}</figcaption>
                 </figure>
               ))}
             </div>
@@ -455,7 +453,6 @@ export default function Home() {
                       className="photo object-[50%_55%]"
                     />
                   </div>
-                  <figcaption className="small mt-3 text-char-soft">Where we meet our partners</figcaption>
                 </figure>
               </div>
               <div className="col-span-12 lg:col-span-7" data-reveal style={{ ["--i" as string]: 2 }}>

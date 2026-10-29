@@ -174,9 +174,6 @@ export default function OperationsMap() {
             ))}
           </svg>
         </div>
-        <figcaption className="small mt-3 text-ink-soft">
-          Province boundaries: Natural Earth (public domain). Select a region to see it on the map.
-        </figcaption>
       </figure>
 
       <ol className="col-span-12 space-y-1 lg:col-span-6 lg:col-start-1 lg:row-start-1" data-reveal style={{ ["--i" as string]: 2 }}>
