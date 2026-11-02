@@ -26,6 +26,12 @@ export default function EnquirySlip() {
 
   useEffect(() => setRef(makeRef()), []);
 
+  // Arriving from a service page link (/contact/?need=Plant%20hire) preselects that service.
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("need");
+    if (fromUrl && (needs as readonly string[]).includes(fromUrl)) setNeed(fromUrl);
+  }, []);
+
   // "Enquire about …" links elsewhere on the page preselect the need.
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -70,7 +76,7 @@ export default function EnquirySlip() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="slip relative p-6 sm:p-10" aria-labelledby="slip-title" noValidate>
+    <form id="enquiry" onSubmit={onSubmit} className="slip relative scroll-mt-28 p-6 sm:p-10" aria-labelledby="slip-title" noValidate>
       <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
         <h3 id="slip-title" className="text-[1.75rem] font-medium leading-tight tracking-[-0.03em]">
           Enquiry slip
