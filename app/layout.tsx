@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Sora, Figtree } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MobileBar from "@/components/MobileBar";
 import Motion from "@/components/Motion";
 import "./globals.css";
 
@@ -57,7 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Motion />
         <main id="main">{children}</main>
         <Footer />
-        <MobileBar />
       </body>
     </html>
   );

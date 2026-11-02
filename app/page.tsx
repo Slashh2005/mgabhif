@@ -21,7 +21,7 @@ export default function Home() {
         <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
 
         <div className="hero relative grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_40%] lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-12">
-          <div className="flex flex-col justify-between gap-10 px-[var(--margin)] pb-8 pt-8 max-sm:min-h-[calc(100svh-9.25rem)] max-sm:justify-end max-sm:gap-8 sm:gap-14 sm:pb-12 sm:pr-4 sm:pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
+          <div className="flex flex-col justify-between gap-10 px-[var(--margin)] pb-8 pt-8 max-sm:min-h-[calc(100svh-4.75rem)] max-sm:justify-end max-sm:gap-8 sm:gap-14 sm:pb-12 sm:pr-4 sm:pt-[clamp(2.5rem,6vw,6rem)] lg:col-span-8 lg:pb-[var(--margin)]">
             <div>
               <p className="hero-kicker" data-load style={{ ["--d" as string]: "200ms" }}>
                 Est. 2022 · Midrand, South Africa

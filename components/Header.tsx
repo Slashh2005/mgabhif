@@ -43,9 +43,13 @@ export default function Header() {
           </Link>
         </nav>
 
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link href="/contact/" className="btn btn--small header-cta">
+            Enquire now
+          </Link>
         <button
           type="button"
-          className={`burger lg:hidden ${open ? "is-open" : ""}`}
+          className={`burger ${open ? "is-open" : ""}`}
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -55,6 +59,7 @@ export default function Header() {
           <span aria-hidden="true" />
           <span aria-hidden="true" />
         </button>
+        </div>
       </div>
 
       <div id="mobile-menu" className="mobile-menu lg:hidden" hidden={!open}>
