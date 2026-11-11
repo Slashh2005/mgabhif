@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * The page's small motion layer: reveal-once and rolling figures. Content is visible without it.
  */
 export default function Motion() {
+  // Runs again after each page change so the new page's sections get their entrances.
+  const pathname = usePathname();
   useEffect(() => {
     const cleanups: Array<() => void> = [];
 
@@ -35,7 +38,7 @@ export default function Motion() {
     });
 
     // Reveal once: section parts and figures.
-    const targets = document.querySelectorAll<HTMLElement>("[data-reveal], [data-roll]");
+    const targets = document.querySelectorAll<HTMLElement>("[data-reveal]:not(.is-in), [data-roll]:not(.is-in)");
     if (!("IntersectionObserver" in window)) {
       targets.forEach((el) => el.classList.add("is-in"));
     } else {
@@ -62,7 +65,7 @@ export default function Motion() {
     }
 
     return () => cleanups.forEach((fn) => fn());
-  }, []);
+  }, [pathname]);
 
   return null;
 }
