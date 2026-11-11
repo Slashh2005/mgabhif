@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-ZA" className={`${sora.variable} ${figtree.variable}`}>
+    <html lang="en-ZA" className={`${sora.variable} ${figtree.variable}`} data-scroll-behavior="smooth">
       <head>
         {/* Hidden entrance states only apply when scripting works. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
