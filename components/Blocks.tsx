@@ -208,7 +208,7 @@ export function SitePhotos() {
   return (
     <div className="swipe swipe--sm mt-[clamp(3rem,6vw,5rem)] sm:grid sm:grid-cols-3 sm:gap-[var(--gutter)]">
       {[
-        { src: IMG.chrome, alt: "Two workers in reflective gear bag samples from a chrome ore stockpile.", w: 720, h: 708, pos: "50% 50%" },
+        { src: IMG.heroPlant, alt: "A spiral concentrator plant in yellow and black steel framing above a fresh heap of wet concentrate.", w: 960, h: 1280, pos: "50% 45%" },
         { src: IMG.engineer, alt: "A site engineer in a hard hat and reflective vest in front of a coal stockpile.", w: 720, h: 808, pos: "50% 40%" },
         { src: IMG.wash, alt: "A wash plant with its conveyor and spiral tower beside fresh stockpiles.", w: 720, h: 699, pos: "65% 50%" },
       ].map((p, i) => (
